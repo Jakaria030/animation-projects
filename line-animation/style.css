@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 100px;
+    position: relative;
+}
+
+h1::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 10px;
+    background-color: black;
+    bottom: 0;
+    left: 0;
+}
+
+h1:hover::after{
+    animation-name: line-animation;
+    animation-duration: 2s;
+}
+
+@keyframes line-animation {
+    0%{
+        width: 0;
+        left: 0;
+    }
+
+    50%{
+        width: 100%;
+        left: 0;
+    }
+
+    100%{
+        width: 0;
+        left: 100%;
+    }
+}
